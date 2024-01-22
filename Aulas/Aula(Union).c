@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//UMA UNION É COMO STRUCT SÓ QUE COM MAIS CONTROLE DE MEMORIA.
+//NA UNION ELA PODE TER UMA LISTA DE VARIAVEIS
+//MAS ELA IRÁ ARMAZENAR APENAS UM DOS VALORES DAS VARIAVEIS NA MEMORIA.
+
 //estrutura para armazenar um documento por vez (CPF ou RG)
 typedef union pessoadoc
 {
