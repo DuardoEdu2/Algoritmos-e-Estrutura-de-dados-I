@@ -5,7 +5,7 @@
 //NA UNION ELA PODE TER UMA LISTA DE VARIAVEIS
 //MAS ELA IRÁ ARMAZENAR APENAS UM DOS VALORES DAS VARIAVEIS NA MEMORIA.
 
-//estrutura union
+//estrutura para armazenar um documento por vez
 typedef union pessoadoc
 {
     /* data */
