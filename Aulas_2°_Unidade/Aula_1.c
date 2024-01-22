@@ -8,6 +8,8 @@ typedef struct {
 
 void preencher(Pessoa * p){
 
+    //Função que preenche os valores das variaveis do tipo pessoa (struct)//
+
     printf("Qual seu nome?\n");
     scanf(" %[^\n]", p->nome);
     
