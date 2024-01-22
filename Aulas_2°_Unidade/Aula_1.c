@@ -5,8 +5,8 @@
 typedef union pessoadoc
 {
     /* data */
-    char rg[20];
-    char cpf[20];
+    char rg[15];
+    char cpf[15];
 }Documentos;
 
 typedef struct {
@@ -32,12 +32,12 @@ void preencher(Pessoa * p, int dec){
     {
         /* code */
         printf("Digite o seu documento (CPF): \t");
-        scanf(" %s", p->doc.cpf);
+        scanf(" %[^\n]", p->doc.cpf);
     }
     else if (dec == 2)
     {
         printf("Digite o seu documento (RG): \t");
-        scanf(" %s", p->doc.rg);
+        scanf(" %[^\n]", p->doc.rg);
     }
     else{
         printf("digite um numero valido");
