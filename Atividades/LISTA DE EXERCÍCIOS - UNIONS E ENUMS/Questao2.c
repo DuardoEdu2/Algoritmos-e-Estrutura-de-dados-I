@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef union type{
-    int alimento;
-    int bebida;
-    int eletronico;
+typedef enum type{
+    alimento,
+    bebida,
+    eletronico
 }Tipo;
 
 typedef struct {
@@ -23,26 +23,8 @@ void preencher(Produto *p, int dec){
     printf("Qual o seu preço?\n");
     scanf(" %f", &p->preco);
 
-    printf("Qual seu tipo (alimento = 1, bebida = 2, eletronico = 3): \t");
-    scanf("%d", &dec);
-
-    
-    if (dec == 1)
-    {
-        /* code */
-        p->tip.alimento = 1;
-    }
-    else if (dec == 2)
-    {
-        p->tip.bebida = 2;
-    }
-    else if (dec == 3)
-    {
-        p->tip.eletronico = 3;
-    }
-    else{
-        printf("digite um numero valido\n");
-    }
+    printf("Qual seu tipo (alimento = 0, bebida = 1, eletronico = 2): \t");
+    scanf("%d", &p->tip);
 
 }
 
@@ -55,7 +37,7 @@ int main(){
 
     printf("nome: %s\n", p->nome);
     printf("preço: %.2f\n", p->preco);
-    printf("Alimento: 1, Bebida: 2, Eletronico: 3\nO tipo de alimento é %d", p->tip);
+    printf(p->tip == 0 ? (p->tip == 1 ? "Bebida" : "Alimento") : "Eletronico");
 
     free(p);
 

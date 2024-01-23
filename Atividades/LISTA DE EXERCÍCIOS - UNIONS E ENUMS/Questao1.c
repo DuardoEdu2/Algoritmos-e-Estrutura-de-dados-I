@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef enum{
+typedef enum genero{
     MASCULINO,
     FEMININO
 }Genero;
@@ -20,26 +20,17 @@ void preencher(Pessoa *p, int dec){
     scanf(" %[^\n]", p->nome);
     
     printf("Qual a sua idade?\n");
-    scanf(" %d", &p->idade);
+    scanf("%d", &p->idade);
 
-    printf("Qual seu genero (M = 1, F = 2): \t");
-    scanf("%d", &dec);
+    printf("Qual seu genero (M = 0, F = 1): \t");
+    scanf("%d", &p->gen);
+}
 
-    
-    if (dec == 1)
-    {
-        /* code */
-        printf("seu genero é Masculino\n");
-        p->gen = MASCULINO;
-    }
-    else if (dec == 2)
-    {
-        printf("Seu genero é Feminino\n");
-        p->gen = FEMININO;
-    }
-    else{
-        printf("digite um numero valido\n");
-    }
+void imprimir(Pessoa * p){
+
+    printf("nome: %s\n", p->nome);
+    printf("idade: %d\n", p->idade);
+    printf("Genero: %s", p->gen == MASCULINO ? "Masculino" : "Feminino");
 
 }
 
@@ -50,9 +41,7 @@ int main(){
 
     preencher(p, cont);
 
-    printf("nome: %s\n", p->nome);
-    printf("idade: %d\n", p->idade);
-    printf("O genero é MASCULINO = 0 ou FEMININO = 1\nSeu genero é: %d", p->gen);
+    imprimir(p);
 
     free(p);
 
