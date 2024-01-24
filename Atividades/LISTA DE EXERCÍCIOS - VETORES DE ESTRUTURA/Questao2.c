@@ -12,11 +12,14 @@ typedef struct aluno
     float media;
 }Aluno;
 
-void liberarMatriz(Aluno** matriz, int tamanho) {
+
+
+void liberarMatriz(Aluno** alunos, int tamanho) {
     for (int i = 0; i < tamanho; i++) {
-        free(matriz[i]);
+        free(alunos[i]);
+        printf("Liberou a memoria, ");
     }
-    free(matriz);
+    free(alunos);
 }
 
 void matricular(Aluno ** alunos, int mx){
@@ -33,8 +36,9 @@ void matricular(Aluno ** alunos, int mx){
         printf("Matricula do aluno:\t");
         scanf("%d", &alunos[i]->matricula);
 
-        if(i == mx){
+        if(i >= mx){
             printf("Acabou as vagas...VAZA");
+            break;
         }
 
     }
@@ -84,7 +88,7 @@ void imprimir(Aluno ** alunos, int mx){
         printf("Matricula: %d\n", alunos[i]->matricula);
         printf("Nome: %s\n", alunos[i]->nome);
         printf("Turma: %c\n", alunos[i]->turma);
-            for (int j = 0; j < mx; j++)
+            for (int j = 0; j < 3; j++)
                 {
                 /* code */
                     printf("Nota %d: %f, ", j, *alunos[i][j].notas);
@@ -94,16 +98,49 @@ void imprimir(Aluno ** alunos, int mx){
     }
 }
 
+void Imprimir_Turma_Aprovada(Aluno ** alunos, int mx, char turm){
+        /* code */
+        for (int i = 0; i < mx; i++)
+        {
+            /* code */
+            if (alunos[i]->turma == turm)
+            {
+                /* code */
+                if (alunos[i]->media >= 7.0)
+                {
+                    /* code */
+                    printf("Aluno %d que esta na turma %c esta aprovado\n", i, alunos[i]->turma);
+                }
+                else if (alunos[i]->media < 7.0)
+                {
+                    /* code */
+                    printf("Aluno %d que esta na turma %c esta reprovado\n", i, alunos[i]->turma);
+                }
+                
+            }
+            else{
+                printf("Essa turma não existe");
+            } 
+        }
+}
+
 int main(void){
 
-    int max = 0;
+    int max = 5;
     int tamanho = 0;
+    char turm;
 
-    printf("Qual é o maximo de vagas?\n");
-    scanf("%d", &max);
+    //printf("Qual é o maximo de vagas?\n");
+    //scanf("%d", &max);
 
     printf("Quantos alunos deseja matricular?\n");
     scanf("%d", &tamanho);
+
+    if (tamanho < max)
+    {
+        max = tamanho;
+    }
+    
 
     Aluno **alunos = (Aluno**) malloc(tamanho * sizeof(Aluno*));
 
@@ -124,7 +161,12 @@ int main(void){
 
     matricular(alunos, max);
     lanca_notas(alunos, max);
-    imprimir(alunos, max);
+    imprimir(alunos, max);   
+
+    printf("Qual turma voce quer avaliar:\t");
+    scanf(" %c", &turm);
+    Imprimir_Turma_Aprovada(alunos, max, turm);
+
     liberarMatriz(alunos, tamanho);
 
     return 0;
