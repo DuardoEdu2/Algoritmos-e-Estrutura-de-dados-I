@@ -61,7 +61,7 @@ int main(void){
         printf("Ok");
     }
 
-    printf("%f", ing->preco);
+    printf("%.2f", ing->preco);
     
 
     free(ing);
