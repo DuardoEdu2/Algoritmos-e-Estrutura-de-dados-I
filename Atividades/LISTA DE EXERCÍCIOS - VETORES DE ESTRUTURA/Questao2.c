@@ -13,7 +13,6 @@ typedef struct aluno
 }Aluno;
 
 
-
 void liberarMatriz(Aluno** alunos, int tamanho) {
     for (int i = 0; i < tamanho; i++) {
         free(alunos[i]);
@@ -91,9 +90,9 @@ void imprimir(Aluno ** alunos, int mx){
             for (int j = 0; j < 3; j++)
                 {
                 /* code */
-                    printf("Nota %d: %f, ", j, *alunos[i][j].notas);
+                    printf("Nota %d: %.2f, ", j, *alunos[i][j].notas);
                 }
-        printf("Media: %f\n", alunos[i]->media);
+        printf("Media: %.2f\n", alunos[i]->media);
             
     }
 }
