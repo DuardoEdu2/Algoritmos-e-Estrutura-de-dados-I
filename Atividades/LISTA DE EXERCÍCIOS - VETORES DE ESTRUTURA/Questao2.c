@@ -117,9 +117,6 @@ void Imprimir_Turma_Aprovada(Aluno ** alunos, int mx, char turm){
                 }
                 
             }
-            else{
-                printf("Essa turma não existe");
-            } 
         }
 }
 
