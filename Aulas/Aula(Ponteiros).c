@@ -1,49 +1,61 @@
 #include <stdio.h>
-#include <stdlib.h> //Funções malloc(), calloc(), realloc()
 
-int main(void){
-    int cont;
-    int tamanho = 5;
-    int novo_tamanho;
-    int *vetor = (int *)malloc(tamanho * sizeof(int));
+void add(float *result, float operand1, float operand2) {
+    *result = operand1 + operand2;
+}
 
+void subtract(float *result, float operand1, float operand2) {
+    *result = operand1 - operand2;
+}
 
-    printf("Qual o temanho que voce deseja? \n");
-    scanf("%d", &novo_tamanho);
+void multiply(float *result, float operand1, float operand2) {
+    *result = operand1 * operand2;
+}
 
-    if(vetor == NULL){
-        printf("Exception has occured: Memory Allocation Error");
-        exit(1);
+void divide(float *result, float operand1, float operand2) {
+    if (operand2 != 0) {
+        *result = operand1 / operand2;
+    } else {
+        printf("Erro: Divisão por zero não é permitida.\n");
     }
-    else {
-        printf("Memoria Alocada\n");
+}
+
+int main() {
+    float num1, num2, result;
+    char operation;
+
+    printf("Digite o primeiro número: ");
+    scanf("%f", &num1);
+
+    printf("Digite a operação (+, -, *, /): ");
+    scanf(" %c", &operation);
+
+    printf("Digite o segundo número: ");
+    scanf("%f", &num2);
+
+    void (*operationPtr)(float *, float, float);
+
+    switch (operation) {
+        case '+':
+            operationPtr = add;
+            break;
+        case '-':
+            operationPtr = subtract;
+            break;
+        case '*':
+            operationPtr = multiply;
+            break;
+        case '/':
+            operationPtr = divide;
+            break;
+        default:
+            printf("Erro: Operação inválida.\n");
+            return 1;
     }
 
-    realloc(vetor, novo_tamanho * sizeof(int));
-    
-    if(vetor == NULL){
-        printf("Exception has occured: Memory Allocation Error");
-        exit(1);
-    }
-    else {
-        printf("Memoria Realocada\n");
-    }
+    operationPtr(&result, num1, num2);
 
-    printf("Digite seus dados: \n");
+    printf("Resultado: %.2f\n", result);
 
-    for (cont = 0; cont < tamanho; cont++)
-    {
-        /* code */
-        scanf("%d", &vetor[cont]);
-    }
-
-    for (cont = 0; cont < tamanho; cont++)
-    {
-        /* code */
-        printf("%d, ", vetor[cont]);
-    }
-
-    free(vetor);
     return 0;
-
 }
