@@ -51,11 +51,12 @@ void lanca_notas(Aluno ** alunos, int mx){
     for (int i = 0; i < mx; i++)
     {
         /* code */
-        printf("Aluno %d\n", i);
+        printf("---------------------------------------------------\n");
+        printf("Aluno %d\n", i + 1);
             for (int  j= 0; j < 3; j++)
             {
             /* code */
-                printf("informe a nota da prova %d:\t", j);
+                printf("informe a nota da prova %d:\t", j + 1);
                 scanf("%f", alunos[i][j].notas);
             }
         
@@ -83,14 +84,14 @@ void imprimir(Aluno ** alunos, int mx){
     {
         /* code */
         printf("===================================================\n");
-        printf("Aluno %d\n", i);
+        printf("Aluno %d\n", i + 1);
         printf("Matricula: %d\n", alunos[i]->matricula);
         printf("Nome: %s\n", alunos[i]->nome);
         printf("Turma: %c\n", alunos[i]->turma);
             for (int j = 0; j < 3; j++)
                 {
                 /* code */
-                    printf("Nota %d: %.2f, ", j, *alunos[i][j].notas);
+                    printf("Nota %d: %.2f, ", j + 1, *alunos[i][j].notas);
                 }
         printf("Media: %.2f\n", alunos[i]->media);
             
@@ -108,12 +109,12 @@ void Imprimir_Turma_Aprovada(Aluno ** alunos, int mx, char turm){
                 if (alunos[i]->media >= 7.0)
                 {
                     /* code */
-                    printf("Aluno %d que esta na turma %c esta aprovado\n", i, alunos[i]->turma);
+                    printf("Aluno %d que esta na turma %c esta aprovado\n", i + 1, alunos[i]->turma);
                 }
                 else if (alunos[i]->media < 7.0)
                 {
                     /* code */
-                    printf("Aluno %d que esta na turma %c esta reprovado\n", i, alunos[i]->turma);
+                    printf("Aluno %d que esta na turma %c esta reprovado\n", i + 1, alunos[i]->turma);
                 }
                 
             }
@@ -136,7 +137,6 @@ int main(void){
     {
         max = tamanho;
     }
-    
 
     Aluno **alunos = (Aluno**) malloc(tamanho * sizeof(Aluno*));
 
