@@ -55,7 +55,31 @@ void mudar_preco(Ingresso ** ing, float valor, int spc){
 
 }
 
+void comparar_value(Ingresso ** ing, int qtd){
 
+    int maior = 0;
+    int menor = 0;
+
+    for (int i = 0; i < qtd - 1; i++)
+    {
+        /* code */
+        if (ing[i]->preco > ing[i + 1]->preco)
+        {
+            maior = i;
+
+            menor = i + 1;
+        }
+        if(ing[i + 1]->preco > ing[i]->preco)
+        {
+            maior = i + 1;
+
+            menor = i;
+        }
+    }
+    
+    printf("Maior preco: %.2f\n", ing[maior]->preco);
+    printf("Menor preco:%.2f\n", ing[menor]->preco);
+}
 
 int main(void){
 
@@ -117,6 +141,9 @@ int main(void){
         /* code */
         printf("Preco %d: %.2f\n", i + 1, ing[i]->preco);
     }
+
+    printf("compraração: \n");
+    comparar_value(ing, qtd);
     
     liberarMatriz(ing, qtd);
 
