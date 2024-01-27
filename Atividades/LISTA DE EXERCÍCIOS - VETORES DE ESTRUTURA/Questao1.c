@@ -11,12 +11,12 @@ typedef struct ingresso
 
 }Ingresso;
 
-void liberarMatriz(Aluno** alunos, int tamanho) {
+void liberarMatriz(Ingresso** ingressos, int tamanho) {
     for (int i = 0; i < tamanho; i++) {
-        free(alunos[i]);
+        free(ingressos[i]);
         printf("Liberou a memoria, ");
     }
-    free(alunos);
+    free(ingressos);
 }
 
 void preencher(Ingresso ** ing, int qtd){
@@ -24,7 +24,7 @@ void preencher(Ingresso ** ing, int qtd){
     for (int i = 0; i < qtd; i++)
     {
         /* code */
-        printf("-----------------------------------------------------------------");
+        printf("-----------------------------------------------------------------\n");
         printf("Atração do ingresso:\t");
         scanf(" %[^\n]", ing[i]->atracao);
 
@@ -43,17 +43,19 @@ void imprimi(Ingresso ** ing, int qtd){
     for (int i = 0; i < qtd; i++)
     {
         /* code */
-        printf("-----------------------------------------------------------------");
+        printf("=================================================================\n");
         printf("Atração: %s\nLocal: %s\nPreco: %.2f\n", ing[i]->atracao, ing[i]->local, ing[i]->preco);
     }
 }
 
-void mudar_preco(Ingresso ** ing, float valor, int qtd, int dec){
+void mudar_preco(Ingresso ** ing, float valor, int spc){
 
         /* code */
-        ing[dec]->preco = valor; 
+        ing[spc]->preco = valor; 
 
 }
+
+
 
 int main(void){
 
@@ -78,7 +80,7 @@ int main(void){
                 ing[i] = (Ingresso*)malloc(sizeof(Ingresso));
                     if (ing[i] == NULL) {
                         fprintf(stderr, "Erro ao alocar a estrutura Aluno[%d]\n", i);
-                        //liberarMatriz(ing, qtd); // Liberar a memória alocada antes de sair com erro
+                        liberarMatriz(ing, qtd); // Liberar a memória alocada antes de sair com erro
                         return 1; // Sair com erro
                     }
             }
@@ -95,13 +97,14 @@ int main(void){
             if (qtd > 1)
             {
                 /* code */
-                printf("Qual dos ingressos voce quer alterar");
-                scanf("%d", &spc - 1);
+                printf("Qual dos ingressos voce quer alterar: ");
+                scanf("%d", &spc);
+                spc = spc - 1;
         }
         printf("Digite o novo valor do preço:\t");
         scanf("%f", &value);
 
-        mudar_preco(ing, value, qtd, spc);
+        mudar_preco(ing, value, spc);
     }
     else if (strcmp(dec, "nao") || strcmp(dec, "n"))
     {
@@ -112,13 +115,10 @@ int main(void){
     for (int i = 0; i < qtd; i++)
     {
         /* code */
-        printf("%.2f", ing[i]->preco);
+        printf("Preco %d: %.2f\n", i + 1, ing[i]->preco);
     }
     
-
-    
-
-    free(ing);
+    liberarMatriz(ing, qtd);
 
     return 0;
 
