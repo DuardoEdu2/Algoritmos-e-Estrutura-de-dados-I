@@ -13,6 +13,9 @@ FUNÇÃO PARA ABRIR UM ARQUIVO:
         int fscanf(FILE* fp, char* formato, ...); //ler dados do arquivo;
         int fgetc(FILE* fp); // get c ou seja pega apenas um caractere por vez;
         char* fgets(char* s, int n, FILE* fp); get s ou seja pega uma string inteira;
+    
+    FUNÇÃO PARA ESCREVE DADOS:
+        
 
 */
 
