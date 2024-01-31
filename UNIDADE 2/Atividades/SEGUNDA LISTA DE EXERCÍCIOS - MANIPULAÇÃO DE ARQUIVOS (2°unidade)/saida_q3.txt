@@ -1,3 +1,6 @@
-Nome e preço da fruta: manga, 8.99
-Nome e preço da fruta: banana, 12.50
-Nome e preço da fruta: caxo de uvas, 25.50
+Nome e preço da fruta: manga, 8.99$
+Nome e preço da fruta: caxo de bananas, 17.25$
+Nome e preço da fruta: peira, 5.75$
+Nome e preço da fruta: laranja mecanica, 777.77$
+Nome e preço da fruta: fruta podre, 0.00$
+Nome e preço da fruta: kiwi, 999.99$

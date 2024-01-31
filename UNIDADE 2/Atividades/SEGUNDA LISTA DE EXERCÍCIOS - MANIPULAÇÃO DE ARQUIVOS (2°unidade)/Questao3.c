@@ -41,6 +41,9 @@ int main(void){
         scanf("%d", &value);
     }
 
+    fclose(otp);
+    printf("Arquivo finalizado");
+    
     return 0;
 
 }
