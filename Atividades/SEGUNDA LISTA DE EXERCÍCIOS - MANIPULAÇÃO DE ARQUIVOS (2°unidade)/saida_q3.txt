@@ -1,0 +1,3 @@
+Nome e preço da fruta: manga, 8.99
+Nome e preço da fruta: banana, 12.50
+Nome e preço da fruta: caxo de uvas, 25.50
