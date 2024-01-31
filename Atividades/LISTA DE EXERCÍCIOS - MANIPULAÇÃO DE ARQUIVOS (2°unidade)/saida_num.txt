@@ -1,0 +1,3 @@
+menor elemento: 0
+maior elemento: 19
+media dos elementos: 7.400000
