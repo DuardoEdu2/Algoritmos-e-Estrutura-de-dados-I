@@ -32,4 +32,6 @@ int main(void){
     fclose(inpt);
     fclose(otp);
 
+    return 0;
+
 }

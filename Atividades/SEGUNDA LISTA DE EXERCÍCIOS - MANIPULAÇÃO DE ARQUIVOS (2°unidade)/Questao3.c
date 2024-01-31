@@ -40,8 +40,7 @@ int main(void){
         printf("Deseja adicionar outra fruta? (s = 1/ n = 0)\n");
         scanf("%d", &value);
     }
-    
 
-    
+    return 0;
 
 }

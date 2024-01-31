@@ -38,4 +38,6 @@ int main(void){
 
     fprintf(otp, "Nome do funcionario: %s\nId do funcionario: %d\nSalario do funcionario: %.2f", func.nome, func.id, func.salario);
 
+    return 0;
+
 }
