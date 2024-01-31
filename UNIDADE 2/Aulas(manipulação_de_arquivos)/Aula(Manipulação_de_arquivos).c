@@ -6,7 +6,7 @@
 FUNÇÃO PARA ABRIR UM ARQUIVO:
     FILE* fopen(nome_arquivo, char* modo); //ver os modos de aberturas
 
-    FUNÇÃO PARA FUCHAR UM ARQUIVO:
+    FUNÇÃO PARA FeCHAR UM ARQUIVO:
         fclose(FILE* fp);
 
     FUNÇÃO PARA LER DADOS DE UM ARQUIVO:
