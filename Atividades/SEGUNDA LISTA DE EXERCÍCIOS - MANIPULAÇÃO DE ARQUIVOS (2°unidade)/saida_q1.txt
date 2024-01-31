@@ -1,0 +1,3 @@
+Nome do funcionario: edu
+Id do funcionario: 1234
+Salario do funcionario: 18000.75

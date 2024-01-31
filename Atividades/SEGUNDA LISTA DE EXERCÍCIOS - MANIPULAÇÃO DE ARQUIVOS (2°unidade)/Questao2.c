@@ -12,7 +12,7 @@ int main(void){
     //modo de leitura
     inpt = fopen("entrada.txt", "rt");
     //modo de escrita
-    otp = fopen("saida_q3.txt", "w");
+    otp = fopen("saida_q2.txt", "w");
     if (inpt == NULL || otp == NULL)
     {
         printf("Erro na abertura do arquivo");
@@ -25,8 +25,7 @@ int main(void){
     while (fgets(linha, 100, inpt) != NULL)
     {
         sscanf(linha,"%20[^\t]%f\t%f\t%f", nome, &notas[0], &notas[1], &notas[2]);
-        media = (notas[0] + notas[1] + notas[2])/3;
-        fprintf(otp, "%s\t %.1f\t %s\n", nome, media, media > 7.0 ? "Aprovado" : "Reprovado");
+        fprintf(otp, "%s\t%.1f\t%.1f\t%.1f\n", nome, notas[0], notas[1], notas[2]);
         
     }
     
