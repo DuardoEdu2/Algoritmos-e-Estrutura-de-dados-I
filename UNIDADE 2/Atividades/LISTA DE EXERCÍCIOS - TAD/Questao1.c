@@ -4,7 +4,7 @@
 
 
 int main(void){
-    int qtd, int dec, dec2;
+    int qtd, dec, dec2;
     float value;
 
     printf("quantas contas voce vai criar: ");
@@ -35,10 +35,14 @@ int main(void){
     {
         printf("conta que vai transferir: ");
         scanf("%d", &dec);
+        
         printf("conta que vai receber: ");
         scanf("%d", &dec2);
 
-        
+        printf("Valor da transferencia: ");
+        scanf("%f", &value);
+
+        Trasnferir(contasbanc, dec, dec2, value);
 
     }
     

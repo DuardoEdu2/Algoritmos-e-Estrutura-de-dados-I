@@ -19,3 +19,8 @@ Modulo
         *para programas de médio e grande porte, a sua divisão em vários módulos é funfamental.
 
 */
+
+////Tipo_abstrato_de_dados
+    /*
+        O que é TAD?
+            TAD: um novo tipo de dado (struct) + conjunto de operações*/

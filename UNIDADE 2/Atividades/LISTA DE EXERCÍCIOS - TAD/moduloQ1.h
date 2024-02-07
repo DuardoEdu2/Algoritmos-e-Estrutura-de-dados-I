@@ -8,3 +8,5 @@ void ShowSaldo(Conta ** conta, int i);
 void Depositar(Conta ** conta, int i, float price);
 /*faz um saque na conta especifica*/
 void Sacar(Conta ** conta, int i, float price);
+/*faz uma transferencia entre as contas fornecidas*/
+void Trasnferir(Conta ** contas, int i, int j, int price);

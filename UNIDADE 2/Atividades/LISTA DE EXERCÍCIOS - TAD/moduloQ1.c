@@ -51,3 +51,16 @@ void Sacar(Conta ** conta, int i, float price){
 
 }
 
+void Trasnferir(Conta ** contas, int i, int j, int price){
+
+    if (contas[i]->saldo < price)
+    {
+        printf("Você não tem saldo suficiente\n");
+    }
+    else{
+        contas[i]->saldo = contas[i]->saldo - price;
+        contas[j]->saldo = contas[j]->saldo + price;
+    }
+
+}
+
