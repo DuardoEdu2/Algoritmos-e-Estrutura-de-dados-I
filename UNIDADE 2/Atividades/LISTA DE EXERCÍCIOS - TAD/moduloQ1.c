@@ -28,7 +28,26 @@ Conta * Cria_Conta(void){
 
 void ShowSaldo(Conta ** conta, int i){
 
-    printf("Saldo da conta: %.2f $", conta[i]->saldo);
+    printf("Saldo da conta: %.2f $\n", conta[i]->saldo);
+
+}
+
+void Depositar(Conta ** conta, int i, float price){
+
+    conta[i]->saldo = conta[i]->saldo + price;
+
+}
+
+void Sacar(Conta ** conta, int i, float price){
+
+    if (conta[i]->saldo < price)
+    {
+        printf("Você não tem saldo suficiente\n");
+    }
+    else{
+        conta[i]->saldo = conta[i]->saldo - price;
+    }
+    
 
 }
 

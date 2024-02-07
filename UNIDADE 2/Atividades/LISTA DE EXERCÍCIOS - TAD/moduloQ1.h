@@ -4,3 +4,7 @@ typedef struct contabancaria Conta;
 Conta * Cria_Conta(void);
 /*retorna o saldo da conta*/
 void ShowSaldo(Conta ** conta, int i);
+/*faz um deposito na conta especifica*/
+void Depositar(Conta ** conta, int i, float price);
+/*faz um saque na conta especifica*/
+void Sacar(Conta ** conta, int i, float price);
