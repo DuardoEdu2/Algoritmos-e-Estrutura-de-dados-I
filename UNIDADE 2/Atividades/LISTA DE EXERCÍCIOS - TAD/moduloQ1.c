@@ -28,7 +28,7 @@ Conta * Cria_Conta(void){
 
 void ShowSaldo(Conta ** conta, int i){
 
-    printf("Saldo da conta: %.2f $\n", conta[i]->saldo);
+    printf("Saldo da conta %d: %.2f $\n", i + 1, conta[i]->saldo);
 
 }
 
@@ -61,6 +61,17 @@ void Trasnferir(Conta ** contas, int i, int j, int price){
         contas[i]->saldo = contas[i]->saldo - price;
         contas[j]->saldo = contas[j]->saldo + price;
     }
+
+}
+
+void removerConta(Conta ** conta, int qtd){
+
+    for (int i = 0; i < qtd; i++)
+    {
+        /* code */
+        free(conta[i]);
+    }
+    free(conta);    
 
 }
 

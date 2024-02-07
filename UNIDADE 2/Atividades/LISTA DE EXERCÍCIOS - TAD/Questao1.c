@@ -42,12 +42,19 @@ int main(void){
         printf("Valor da transferencia: ");
         scanf("%f", &value);
 
-        Trasnferir(contasbanc, dec, dec2, value);
+        Trasnferir(contasbanc, dec - 1, dec2 - 1, value);
 
+    }
+
+    for (int i = 0; i < qtd; i++)
+    {
+        /* code */
+        ShowSaldo(contasbanc, i);
     }
     
     
     
+    removerConta(contasbanc, qtd);
     return 0;
 
 }
